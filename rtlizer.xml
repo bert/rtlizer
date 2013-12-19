@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<article>
+  <articleinfo>
+    <title>Rtlizer.</title>
+
+    <author>
+      <firstname>Alexandru</firstname>
+
+      <surname>Csete</surname>
+
+      <affiliation>
+        <orgname/>
+      </affiliation>
+    </author>
+
+    <pubdate/>
+  </articleinfo>
+
+  <section>
+    <title>Rtlizer.</title>
+
+    <para>Rtlizer is a simple spectrum analyzer application written using
+    rtlsdr, kiss_fft and Gtk+.</para>
+
+    <para>It was originally created as a Beaglebone+rtlsdr demo, but it will
+    probably run on anything with rtlsdr and Gtk+ installed.</para>
+
+    <figure>
+      <title>Beaglebone rtlizer.</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="8474999050_4d418b232d.jpg"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>You can see a short video demo on YouTube:
+    &lt;https://www.youtube.com/watch?v=jzmFXreuFR4&gt;.</para>
+
+    <section>
+      <title>Dependencies.</title>
+
+      <itemizedlist>
+        <listitem>
+          <para>rtlsdr (http://sdr.osmocom.org/trac/wiki/rtl-sdr)</para>
+        </listitem>
+
+        <listitem>
+          <para>Gtk+ v2 (http://www.gtk.org/)</para>
+        </listitem>
+
+        <listitem>
+          <para>kiss_fft (http://kissfft.sourceforge.net/) (included)</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>Build.</title>
+
+      <para>There are no makefiles, just two simple scripts containing a gcc
+      command line:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>build - for building on i386-like computers.</para>
+        </listitem>
+
+        <listitem>
+          <para>build-target - for building rtlizer directly on the Beaglebone
+          or compatible boards.</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>Usage.</title>
+
+      <para>You can basically run rtlizer as is in an X11 environment.</para>
+
+      <para>The default window size is set to 320x240 but can be overridden
+      using X Window System geometry string, e.g.</para>
+
+      <programlisting>rtlizer 640x360+0+0</programlisting>
+
+      <para>On the Beaglebone I am running my own built linux with X but no
+      display or window manager.</para>
+
+      <para>In this case I start rtlizer using the xinit command.</para>
+
+      <para>Recipes for creating such linux images are available under the
+      [nanosdr project] (https://github.com/csete/nanosdr).</para>
+
+      <para>The file rtlizer.service is used to autostart the application on
+      the Beaglebone using systemd. </para>
+    </section>
+
+    <section>
+      <title>Credits.</title>
+
+      <para>Rtlizer was written by Alexandru Csete.</para>
+
+      <para>Uses code from rtl_test by Steve Markgraf.</para>
+
+      <para>Includes kiss_fft by Mark Borgerding.</para>
+    </section>
+  </section>
+</article>
